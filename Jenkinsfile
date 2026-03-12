@@ -64,6 +64,7 @@ def build(){
 
 def deploy(String environment){
     echo "Deployment to ${environment} environment has started.."
+    sh "ls"
     echo "Deployment to ${environment} environment finished.."
 }
 
