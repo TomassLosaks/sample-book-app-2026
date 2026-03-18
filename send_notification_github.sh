@@ -11,6 +11,7 @@ if [ $STATUS = 0 ]; then
     MESSAGE=""$STAGE" (api-tests) passed :white_check_mark:"
 fi
 
+
 # Send notification
 curl -X POST \
   https://discordapp.com/api/webhooks/*/* \
