@@ -85,6 +85,6 @@ def test(String environment){
     sh "echo '${directory}'"
     sh "docker run --rm --network sample-book-app-compose-network -v '${directory}':/api-tests/mochawesome-report mtararujs/api-tests books BOOKS_${environment}"
     sh "ls"
-    archiveArtifacts allowEmptyArchive: true, artifacts: 'mochawesome.json', followSymlinks: false
+    archiveArtifacts allowEmptyArchive: true, artifacts: 'mochawesome.html', followSymlinks: false
     echo "Testing Sample Book Application service finished.."
 }
