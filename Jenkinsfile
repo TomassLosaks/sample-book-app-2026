@@ -63,15 +63,15 @@ pipeline {
 
 def build(){
     echo "Building sample-book-app.." 
-    sh "docker build --no-cache -t mtararujs/sample-book-app:${BUILD_NUMBER} ."
+    sh "docker build --no-cache -t mtararujs/sample-book-app ."
    
     echo "Pushing image to docker registry.." 
-    sh "docker push mtararujs/sample-book-app:${BUILD_NUMBER}"
+    sh "docker push mtararujs/sample-book-app"
 }
 
 def deploy(String environment){
     echo "Deployment to ${environment} environment has started.."
-    sh "docker pull mtararujs/sample-book-app:${BUILD_NUMBER}"
+    sh "docker pull mtararujs/sample-book-app"
     sh "docker compose stop sample-book-app-${environment}"
     sh "docker compose rm sample-book-app-${environment}"
     sh "docker compose up -d sample-book-app-${environment}"
